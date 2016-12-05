@@ -12,7 +12,6 @@
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
-#include <stdio.h>
 
 char	*ft_strcat(char *s1, const char *s2)
 {
@@ -29,12 +28,3 @@ char	*ft_strcat(char *s1, const char *s2)
 	s1[i + j] = '\0';
 	return s1;
 }
-
-// int		main(void)
-// {
-// 	char s1[] = "Isis";
-// 	char s2[] = "Moran";
-// 	//printf("%s", ft_strcat(s1, s2));
-// 	printf("%s", strcat(s1, s2));
-// 	return 0;
-// }

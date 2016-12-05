@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
-#include <stdio.h>
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
@@ -22,7 +21,7 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	j = 0;
 	while (s1[i])
 		i++;
-	while (s2[i] && n)
+	while (s2[j] && n)
 	{
 		s1[i + j] = s2[j];
 		j++;
@@ -31,18 +30,3 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	s1[i + j] = '\0';
 	return (s1);
 }
-
-// int		main(void)
-// {
-// 	char string1[10] = "Isis";
-// 	char string2[] = "Moran";
-//
-// 	char string2[10] = "Isis";
-// 	char string3[]
-//
-// 	printf("%s", ft_strncat(s1, s2, 1));
-// 	printf("\n");
-// 	printf("%s", strncat(s1, s2, 1));
-// 	return (0);
-// }
-//

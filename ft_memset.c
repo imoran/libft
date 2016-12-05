@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void  *ft_memset(void *b, int c, size_t len)
 {
@@ -30,21 +29,3 @@ void  *ft_memset(void *b, int c, size_t len)
   }
   return (b1);
 }
-
-// int main ()
-// {
-//    char str1[2];
-//    char str2[2];
-//
-//   //  strcpy(str1,"This is string.h library function");
-//   //  puts(str1);
-//   //  strcpy(str2, "This is string.h library function");
-//   //  puts(str2);
-//
-//   ft_memset(str2, '.', 7);
-//
-//   //  memset(str1, '.' , 7);
-//   //  puts(str1);
-//
-//    return(0);
-// }
