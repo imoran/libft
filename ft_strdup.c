@@ -14,11 +14,13 @@
 
 char  *ft_strdup(const char *s1)
 {
-  char  *s;
+  char *s;
   int   i;
 
   i = 0;
-  s = (char *)malloc(sizeof(s) * ft_strlen(s1));
+  s = malloc(ft_strlen(s1) + 1);
+  if (!s)
+    return (0);
   while (s1[i])
   {
     s[i] = s1[i];

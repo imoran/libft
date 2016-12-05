@@ -15,30 +15,18 @@
 
 void    *ft_memcpy(void *dst, const void *src, size_t n)
 {
-  char  *d;
-  char  *s;
-  int    i;
+  int          i;
+  char        *d;
+  const char  *s;
 
-  d = dst;
-  s = src;
   i = 0;
+  d = (char *)dst;
+  s = (const char *)src;
   while (n)
   {
     d[i] = s[i];
     i++;
     n--;
   }
-  return (d);
-}
-
-int main ()
-{
-   const char src[50] = "http://www.tutorialspoint.com";
-   char dest[50];
-
-   printf("Before memcpy dest = %s\n", dest);
-   memcpy(dest, src, strlen(src)+1);
-   printf("After memcpy dest = %s\n", dest);
-
-   return(0);
+  return (dst);
 }

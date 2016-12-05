@@ -41,19 +41,19 @@ size_t	ft_strlcat(char *dst, char *src, size_t size)
 	return (dst_len + src_len);
 }
 
-int   main(void)
-{
-  char src1[] = "This is source";
-  char dst1[50] = "This is destination";
-  char src2[] = "This is source";
-  char dst2[50] = "This is destination";
-
-  //printf("%lu", strlen(dst1));
-  printf("%lu", ft_strlcat(dst1, src1, 10));
-  // printf("\n%s\n", dst1);
-  //
-  //printf("\n");
-  //printf("%lu", strlcat(dst2, src2, 10));
-  // printf("\n%s\n", dst2);
-
-}
+// int   main(void)
+// {
+//   char src1[] = "This is source";
+//   char dst1[50] = "This is destination";
+//   char src2[] = "This is source";
+//   char dst2[50] = "This is destination";
+//
+//   //printf("%lu", strlen(dst1));
+//   printf("%lu", ft_strlcat(dst1, src1, 10));
+//   // printf("\n%s\n", dst1);
+//   //
+//   //printf("\n");
+//   //printf("%lu", strlcat(dst2, src2, 10));
+//   // printf("\n%s\n", dst2);
+//
+// }

@@ -4,19 +4,19 @@ LIBNAME = libft.a
 
 CFLAGS = gcc -Wall -Wextra -Werror
 
-SRCS = \
-	ft_strlen.c 
+SRCS = ft*.c 
 
-OBJS = ft*.o 
-	
+
+OBJS = ft*.o
+
 all: $(NAME)
 
-$(NAME): 
+$(NAME):
 	$(CFLAGS) -c $(SRCS) -Ilibft.h
-	ar rc $(LIBNAME) $(OBJS) 
+	ar rc $(LIBNAME) $(OBJS)
 	ranlib $(LIBNAME)
 
-clean: 
+clean:
 	rm -f $(OBJS)
 
 fclean: clean
