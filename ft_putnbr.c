@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imoran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/02 21:17:49 by imoran            #+#    #+#             */
-/*   Updated: 2016/12/05 14:06:59 by imoran           ###   ########.fr       */
+/*   Created: 2016/12/05 22:13:48 by imoran            #+#    #+#             */
+/*   Updated: 2016/12/05 22:40:20 by imoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	ft_putnbr(int nb)
 {
-	char	*s;
-	int		i;
+	int nb2;
+	int power;
 
-	i = 0;
-	s = malloc(ft_strlen(s1) + 1);
-	if (!s)
-		return (0);
-	while (s1[i])
+	power = 1;
+	if (nb < 0)
 	{
-		s[i] = s1[i];
-		i++;
+		ft_putchar('-');
+		nb = -nb;
 	}
-	s[i] = '\0';
-	return (s);
+	nb2 = nb;
+	while ((nb2 /= 10) > 0)
+		power *= 10;
+	while (power)
+	{
+		ft_putchar((nb / power) + '0');
+		nb %= power;
+		power /= 10;
+	}
 }

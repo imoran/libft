@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imoran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/02 21:17:49 by imoran            #+#    #+#             */
-/*   Updated: 2016/12/05 14:06:59 by imoran           ###   ########.fr       */
+/*   Created: 2016/12/06 16:31:39 by imoran            #+#    #+#             */
+/*   Updated: 2016/12/06 16:33:51 by imoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	char	*s;
-	int		i;
+	const char	*s1;
 
-	i = 0;
-	s = malloc(ft_strlen(s1) + 1);
-	if (!s)
-		return (0);
-	while (s1[i])
+	s1 = (const char *)s;
+	while (n--)
 	{
-		s[i] = s1[i];
-		i++;
+		if (*s1 == c)
+			return ((void *)s1);
+		s1++;
 	}
-	s[i] = '\0';
-	return (s);
+	return (0);
+
 }

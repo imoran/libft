@@ -11,42 +11,31 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-int   ft_atoi(const char *str)
+int		ft_atoi(const char *str)
 {
-  int i;
-  int result;
+	int i;
+	int result;
+	int negative;
 
-  i = 0;
-  result = 0;
-
-  if (str[0] == '-')
-    i++;
-  while (str[i])
-  {
-    if (str[i] > 47 && str[i] < 58)
-    {
-      result = result * 10 + (str[i] - '0');
-      if (!(str[i + 1] > 47 && str[i + 1] < 58))
-        break;
-    }
-    else if (!(str[i] > 0 && str[i] <= 32))
-        break;
-    i++;
-  }
-  if (str[0] == '-')
-    return (-result);
-  return (result);
-}
-
-int   main(void)
-{
-  char str1[] = "   7 123 ";
-  char str2[] = "   7 123 ";
-  printf("%i", ft_atoi(str1));
-  printf("\n");
-  printf("%i", atoi(str2));
-  return (0);
+	negative = 0;
+	i = 0;
+	result = 0;
+	while (str[i])
+	{
+		if (str[i] == '-' && (str[i + 1] > 47 && str[i + 1] < 58))
+			negative = 1;
+		if (str[i] > 47 && str[i] < 58)
+		{
+			result = result * 10 + (str[i] - '0');
+			if (str[i + 1] == '-')
+				break ;
+		}
+		else if (!(str[i] > 0 && str[i] <= 32) && !(negative))
+			break ;
+		i++;
+	}
+	if (negative)
+		result = -result;
+	return (result);
 }

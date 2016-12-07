@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imoran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/02 21:17:49 by imoran            #+#    #+#             */
-/*   Updated: 2016/12/05 14:06:59 by imoran           ###   ########.fr       */
+/*   Created: 2016/12/05 18:27:09 by imoran            #+#    #+#             */
+/*   Updated: 2016/12/05 18:27:18 by imoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+int		ft_tolower(int c)
 {
-	char	*s;
-	int		i;
-
-	i = 0;
-	s = malloc(ft_strlen(s1) + 1);
-	if (!s)
-		return (0);
-	while (s1[i])
-	{
-		s[i] = s1[i];
-		i++;
-	}
-	s[i] = '\0';
-	return (s);
+	if (c > 64 && c < 91)
+		return (c + 32);
+	return (c);
 }

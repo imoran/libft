@@ -6,28 +6,27 @@
 /*   By: imoran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/04 21:46:58 by imoran            #+#    #+#             */
-/*   Updated: 2016/12/04 21:47:09 by imoran           ###   ########.fr       */
+/*   Updated: 2016/12/05 14:09:30 by imoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char   *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-  char *s2;
+	char *s2;
 
-  s2 = (char *)s;
-
-  while (*s2)
-    s2++;
-  if (c == *s2)
-    return (s2);
-  s2--;
-  while (*s2)
-  {
-    if (*s2 == c)
-      return (s2);
-    s2--;
-  }
-  return (0);
+	s2 = (char *)s;
+	while (*s2)
+		s2++;
+	if (c == *s2)
+		return (s2);
+	s2--;
+	while (*s2)
+	{
+		if (*s2 == c)
+			return (s2);
+		s2--;
+	}
+	return (0);
 }

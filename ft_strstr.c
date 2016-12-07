@@ -1,31 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imoran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/02 21:17:49 by imoran            #+#    #+#             */
-/*   Updated: 2016/12/05 14:06:59 by imoran           ###   ########.fr       */
+/*   Created: 2016/12/04 23:35:38 by imoran            #+#    #+#             */
+/*   Updated: 2016/12/04 23:35:52 by imoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+char	*ft_strstr(const char *big, const char *little)
 {
-	char	*s;
 	int		i;
+	int		match;
+	int		len;
+	char	*b;
+	char	*l;
 
 	i = 0;
-	s = malloc(ft_strlen(s1) + 1);
-	if (!s)
-		return (0);
-	while (s1[i])
+	match = 0;
+	len = ft_strlen(little);
+	b = (char *)big;
+	l = (char *)little;
+	if (len == 0)
+		return (b);
+	while (b[i])
 	{
-		s[i] = s1[i];
+		while (l[match] == b[i + match])
+		{
+			if (match == len - 1)
+				return (b + i);
+			match++;
+		}
+		match = 0;
 		i++;
 	}
-	s[i] = '\0';
-	return (s);
+	return (0);
 }
