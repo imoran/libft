@@ -12,9 +12,10 @@
 
 #include "libft.h"
 
-int 	ft_putstr(char *str)
+void	ft_putstr(char const *str)
 {
 	int i;
+
 	i = 0;
 	if (str)
 	{
@@ -24,6 +25,4 @@ int 	ft_putstr(char *str)
 			i++;
 		}
 	}
-	// write(fd, str, ft_strlen(str));
-	return (0);
 }

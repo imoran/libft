@@ -6,22 +6,17 @@
 /*   By: imoran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/05 20:21:09 by imoran            #+#    #+#             */
-/*   Updated: 2016/12/05 20:21:19 by imoran           ###   ########.fr       */
+/*   Updated: 2016/12/06 20:28:44 by imoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int		ft_putchar(int c)
+void	ft_putchar(int c)
 {
-	if (c >= 0 && c <= 255)
-		write(1, &c, 1);
-	return (0);
-}
+	unsigned char	c1;
 
-// int		main(void)
-// {
-// 	printf("%c", ft_putchar('ע'));
-// 	printf("%c", putchar('ע'));
-// }
+	c1 = (unsigned char)c;
+	write(1, &c1, 1);
+}

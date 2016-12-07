@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imoran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/05 22:13:48 by imoran            #+#    #+#             */
-/*   Updated: 2016/12/05 22:40:20 by imoran           ###   ########.fr       */
+/*   Created: 2016/12/06 21:53:36 by imoran            #+#    #+#             */
+/*   Updated: 2016/12/06 21:53:52 by imoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nb)
+char	*ft_strnew(size_t size)
 {
-	if (nb == -2147483648)
-	{
-		ft_putstr("-2147483648");
-		return ;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb > 9)
-		ft_putnbr(nb / 10);
-	ft_putchar((nb % 10) + '0');
+	char	*result;
+
+	result = (char *)malloc(size + 1);
+	if (!result)
+		return (NULL);
+	return (ft_memset(result, 0, size + 1));
 }

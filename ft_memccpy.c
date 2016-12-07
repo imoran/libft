@@ -9,40 +9,26 @@
 /*   Updated: 2016/12/03 23:29:30 by imoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-//
-// #include "libft.h"
-//
-// void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
-// {
-// 	char			*d;
-// 	char			*s;
-// 	unsigned char	*c1;
-//
-// 	d = (char *)dst;
-// 	s = (char *)src;
-// 	c1 = (unsigned char *)c;
-// 	while (n--)
-// 	{
-// 		if (*s == c1)
-// 		{
-// 			return (d++);
-// 		}
-// 		*d++ = *s++;
-// 	}
-// 	return (0);
-// }
 
+#include "libft.h"
 
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+{
+	char		*d;
+	const char	*s;
 
-
-// 	char		*d;
-// 	char			*s;
-//
-// 	d = (char *)dst;
-// 	s = (char *)src;
-//   while (--n)
-//   {
-// 	  if ((*d++ = *s++) == c)
-// 	  	return (dst);
-// 	}
-// return (0);
+	d = dst;
+	s = src;
+	while (n--)
+	{
+		*d = *s;
+		if ((unsigned char)*s == (unsigned char)c)
+		{
+			d++;
+			return (d);
+		}
+		d++;
+		s++;
+	}
+	return (0);
+}

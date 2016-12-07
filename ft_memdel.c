@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_memdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imoran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/05 22:13:48 by imoran            #+#    #+#             */
-/*   Updated: 2016/12/05 22:40:20 by imoran           ###   ########.fr       */
+/*   Created: 2016/12/06 21:35:28 by imoran            #+#    #+#             */
+/*   Updated: 2016/12/06 21:35:38 by imoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+// #include "libft.h"
+//
+// void	ft_memdel(void **ap)
+// {
+//
+// }
 
-void	ft_putnbr(int nb)
-{
-	if (nb == -2147483648)
-	{
-		ft_putstr("-2147483648");
-		return ;
-	}
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb > 9)
-		ft_putnbr(nb / 10);
-	ft_putchar((nb % 10) + '0');
-}
+
+// ft_memdel
+// Prototype void ft_memdel(void **ap);
+// Description Takes as a parameter the address of a memory area that needs
+// to be freed with free(3), then puts the pointer to NULL.
+// Param. #1 A pointer’s address that needs its memory freed and set to
+// NULL.
+// Return value None.
+// Libc functions free(3).
