@@ -14,10 +14,10 @@
 
 char	*ft_strnew(size_t size)
 {
-	char	*result;
+	char *result;
 
 	result = (char *)malloc(size + 1);
 	if (!result)
-		return (NULL);
+		return (0);
 	return (ft_memset(result, 0, size + 1));
 }
