@@ -6,7 +6,7 @@
 /*   By: imoran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 09:28:26 by imoran            #+#    #+#             */
-/*   Updated: 2016/11/28 13:43:05 by imoran           ###   ########.fr       */
+/*   Updated: 2016/12/09 14:21:52 by imoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <string.h>
 
 int		ft_atoi(const char *str);
-void    ft_bzero(void *s, size_t n);
+void	ft_bzero(void *s, size_t n);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
@@ -27,12 +27,12 @@ int		ft_isprint(int c);
 char	*ft_itoa(int value, char *str, int base);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
-void    *ft_memccpy(void *dst, const void *src, int c, size_t n);
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-void    *ft_memcpy(void *dst, const void *src, size_t n);
-void    *ft_memmove(void *dst, const void *src, size_t len);
-void    *ft_memset(void *b, int c, size_t len);
+void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_memmove(void *dst, const void *src, size_t len);
+void	*ft_memset(void *b, int c, size_t len);
 void	ft_putchar(int c);
 void	ft_putnbr(int nb);
 void	ft_putstr(char const *str);
