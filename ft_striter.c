@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imoran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/05 21:59:10 by imoran            #+#    #+#             */
-/*   Updated: 2016/12/05 21:59:20 by imoran           ###   ########.fr       */
+/*   Created: 2016/12/09 14:36:11 by imoran            #+#    #+#             */
+/*   Updated: 2016/12/09 15:00:26 by imoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *str)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	int i;
-
-	i = 0;
-	if (!str)
-		return ;
-	if (str)
-	{
-		while (str[i])
-		{
-			ft_putchar(str[i]);
-			i++;
-		}
-	}
+	if (s)
+		while (*s)
+			f(s++);
 }

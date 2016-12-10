@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imoran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/05 21:59:10 by imoran            #+#    #+#             */
-/*   Updated: 2016/12/05 21:59:20 by imoran           ###   ########.fr       */
+/*   Created: 2016/12/10 01:21:25 by imoran            #+#    #+#             */
+/*   Updated: 2016/12/10 01:22:03 by imoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *str)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int i;
-
-	i = 0;
-	if (!str)
-		return ;
-	if (str)
+	if (n == -2147483648)
 	{
-		while (str[i])
-		{
-			ft_putchar(str[i]);
-			i++;
-		}
+		ft_putstr_fd("-2147483648", fd);
+		return ;
 	}
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n = -n;
+	}
+	if (n > 9)
+		ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd((n % 10) + '0', fd);
 }

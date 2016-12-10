@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imoran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/05 21:59:10 by imoran            #+#    #+#             */
-/*   Updated: 2016/12/05 21:59:20 by imoran           ###   ########.fr       */
+/*   Created: 2016/12/10 00:40:51 by imoran            #+#    #+#             */
+/*   Updated: 2016/12/10 00:42:18 by imoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *str)
+void	ft_putendl(char const *s)
 {
-	int i;
-
-	i = 0;
-	if (!str)
-		return ;
-	if (str)
-	{
-		while (str[i])
-		{
-			ft_putchar(str[i]);
-			i++;
-		}
-	}
+	ft_putstr(s);
+	ft_putchar('\n');
 }

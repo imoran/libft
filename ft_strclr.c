@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imoran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/05 21:59:10 by imoran            #+#    #+#             */
-/*   Updated: 2016/12/05 21:59:20 by imoran           ###   ########.fr       */
+/*   Created: 2016/12/09 14:30:24 by imoran            #+#    #+#             */
+/*   Updated: 2016/12/09 14:59:33 by imoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *str)
+void	ft_strclr(char *s)
 {
-	int i;
-
-	i = 0;
-	if (!str)
-		return ;
-	if (str)
-	{
-		while (str[i])
-		{
-			ft_putchar(str[i]);
-			i++;
-		}
-	}
+	if (s)
+		ft_bzero(s, ft_strlen(s));
 }

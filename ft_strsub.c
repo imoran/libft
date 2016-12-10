@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: imoran <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/12/05 21:59:10 by imoran            #+#    #+#             */
-/*   Updated: 2016/12/05 21:59:20 by imoran           ###   ########.fr       */
+/*   Created: 2016/12/09 21:56:17 by imoran            #+#    #+#             */
+/*   Updated: 2016/12/09 21:56:25 by imoran           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putstr(char const *str)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int i;
+	char			*result;
+	unsigned int	i;
 
+	if ((!len || !s) || !s[start])
+		return (0);
+	result = (char *)malloc(sizeof(char) * len + 1);
 	i = 0;
-	if (!str)
-		return ;
-	if (str)
-	{
-		while (str[i])
-		{
-			ft_putchar(str[i]);
-			i++;
-		}
-	}
+	if (!result)
+		return (0);
+	while (len--)
+		result[i++] = s[start++];
+	result[i] = '\0';
+	return (result);
 }
