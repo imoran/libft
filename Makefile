@@ -4,8 +4,7 @@ LIBNAME = libft.a
 
 CFLAGS = gcc -Wall -Wextra -Werror
 
-SRCS = ft*.c 
-
+SRCS = ft*.c
 
 OBJS = ft*.o
 

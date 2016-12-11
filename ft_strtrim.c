@@ -10,22 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "libft.h"
-//
-// char	*ft_strtrim(char const *s)
-// {
-// 	char	*result;
-//
-//
-// }
+#include "libft.h"
 
+char	*ft_strtrim(char const *s)
+{
+	char	*result;
+	int		i;
+	int		start;
+	int		end;
 
-// Description Allocates (with malloc(3)) and returns a copy of the string
-// given as argument without whitespaces at the beginning or at
-// the end of the string. Will be considered as whitespaces the
-// following characters ’ ’, ’\n’ and ’\t’. If s has no whitespaces
-// at the beginning or at the end, the function returns a
-// copy of s. If the allocation fails the function returns NULL.
-// Param. #1 The string to be trimed.
-// Return value The “fresh” trimmed string or a copy of s.
-// Libc functions malloc(3)
+	if (!s)
+		return (0);
+	i = 0;
+	end = ft_strlen(s) - 1;
+	start = 0;
+	while (s[start] == ' ' || s[start] == '\n' || s[start] == '\t')
+		start++;
+	while (s[end] == ' ' || s[end] == '\n' || s[end] == '\t')
+		end--;
+	if (start > end)
+		return ("");
+	result = (char *)malloc(sizeof(char) * (end - start + 2));
+	if (!result)
+		return (0);
+	while (start <= end)
+		result[i++] = s[start++];
+	result[i] = '\0';
+	return (result);
+}
