@@ -10,49 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-// ft_strsplit
-// Prototype
-// char** ft_strsplit(charconst*s,charc);
-// Description
-// Allocates (with malloc(3)) and returns an array of “fresh” strings (all ending with ’\0’, including the array itself)
-// obtained by spliting s using the character c as a delimiter.
-// If the allocation fails the function returns NULL.
-// Example : ft_strsplit("*hello*fellow***students*", ’*’)
-// returns the array ["hello", "fellow", "students"].
-// Param. #1
-// The string to split.
-// Param. #2
-// The delimiter character.
-// Return value
-// The array of “fresh” strings result of the split.
-// Libc functions
-// malloc(3), free(3)
-
 #include "libft.h"
 
-static int		ft_cnt_parts(const char *s, char c)
+static int	ft_substring(const char *s, char c)
 {
-	int		cnt;
-	int		in_substring;
+	int		count;
+	int		sub;
 
-	in_substring = 0;
-	cnt = 0;
+	sub = 0;
+	count = 0;
 	while (*s)
 	{
-		if (in_substring == 1 && *s == c)
-			in_substring = 0;
-		if (in_substring == 0 && *s != c)
+		if (sub == 1 && *s == c)
+			sub = 0;
+		if (sub == 0 && *s != c)
 		{
-			in_substring = 1;
-			cnt++;
+			sub = 1;
+			count++;
 		}
 		s++;
 	}
-	return (cnt);
+	return (count);
 }
 
-static int	ft_wlen(const char *s, char c)
+static int	ft_len(const char *s, char c)
 {
 	int		len;
 
@@ -65,29 +46,28 @@ static int	ft_wlen(const char *s, char c)
 	return (len);
 }
 
-char	**ft_strsplit(char const *s, char c)
+char		**ft_strsplit(char const *s, char c)
 {
-	char	**t;
-	int		nb_word;
+	char	**str;
+	char	**str2;
+	int		num_words;
 	int		index;
 
-	index = 0;
-	nb_word = ft_cnt_parts((const char *)s, c);
-	t = (char **)malloc(sizeof(*t) * nb_word + 1);
-	if (!t)
-		return (0);
 	if (!s)
 		return (0);
-	while (nb_word--)
+	index = 0;
+	num_words = ft_substring((const char *)s, c);
+	str = (char **)malloc(sizeof(*str) * num_words + 1);
+	if (!str)
+		return (0);
+	while (num_words--)
 	{
 		while (*s == c && *s)
 			s++;
-		t[index] = ft_strsub((const char *)s, 0, ft_wlen((const char *)s, c));
-		if (t[index] == 0)
-			return (0);
-		s = s + ft_wlen(s, c);
+		str[index] = ft_strsub((const char *)s, 0, ft_len((const char *)s, c));
+		s += ft_len(s, c);
 		index++;
 	}
-	t[index] = 0;
-	return (t);
+	str[index] = 0;
+	return (str);
 }

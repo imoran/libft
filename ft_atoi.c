@@ -12,30 +12,40 @@
 
 #include "libft.h"
 
-int		ft_atoi(const char *str)
+static void		ft_check(int *result, const char *str)
 {
 	int i;
-	int result;
-	int negative;
+	int neg;
+	int pos;
 
-	negative = 0;
+	neg = 0;
+	pos = 0;
 	i = 0;
-	result = 0;
 	while (str[i])
 	{
 		if (str[i] == '-' && (str[i + 1] > 47 && str[i + 1] < 58))
-			negative = 1;
+			neg = 1;
+		if (str[i] == '+' && (str[i + 1] > 47 && str[i + 1] < 58))
+			pos = 1;
 		if (str[i] > 47 && str[i] < 58)
 		{
-			result = result * 10 + (str[i] - '0');
-			if (str[i + 1] == '-')
+			*result = *result * 10 + (str[i] - '0');
+			if (!(str[i + 1] > 47 && str[i + 1] < 58))
 				break ;
 		}
-		else if (!(str[i] > 0 && str[i] <= 32) && !(negative))
+		else if (!(str[i] > 0 && str[i] <= 32) && (!(neg) && !(pos)))
 			break ;
 		i++;
 	}
-	if (negative)
-		result = -result;
+	if (neg)
+		*result = -*result;
+}
+
+int				ft_atoi(const char *str)
+{
+	int result;
+
+	result = 0;
+	ft_check(&result, str);
 	return (result);
 }
