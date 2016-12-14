@@ -49,7 +49,6 @@ static int	ft_len(const char *s, char c)
 char		**ft_strsplit(char const *s, char c)
 {
 	char	**str;
-	char	**str2;
 	int		num_words;
 	int		index;
 
