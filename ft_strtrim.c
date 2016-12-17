@@ -28,11 +28,11 @@ char	*ft_strtrim(char const *s)
 		start++;
 	while (s[end] == ' ' || s[end] == '\n' || s[end] == '\t')
 		end--;
+	result = (char *)malloc(sizeof(char) * ((end - start) + 1));
+	if (!result)
+		return (NULL);
 	if (start > end)
 		return ("");
-	result = (char *)malloc(sizeof(char) * (end - start + 2));
-	if (!result)
-		return (0);
 	while (start <= end)
 		result[i++] = s[start++];
 	result[i] = '\0';
