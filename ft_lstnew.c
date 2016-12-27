@@ -27,7 +27,7 @@ t_list *ft_lstnew(void const *content, size_t content_size)
 	elem->next = NULL;
 	return (elem);
 
-	
+
 	// t_list *elem;
 	//
 	// elem = (t_list*)malloc(sizeof(content_size));
