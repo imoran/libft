@@ -25,6 +25,7 @@ int					ft_isascii(int c);
 int					ft_isdigit(int c);
 int					ft_islower(int c); //this is an extra function
 int					ft_isprint(int c);
+int					ft_ispunct(int c); //this is another extra function
 int					ft_isspace(int c);   //this is an extra function
 int					ft_isupper(int c); //this is an extra function
 char				*ft_itoa(int n);
