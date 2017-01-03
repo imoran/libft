@@ -3,7 +3,7 @@ NAME = libft.a
 CFLAGS = gcc -Wall -Wextra -Werror
 
 SRCS =	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c \
-		ft_isascii.c ft_isdigit.c ft_islower.c ft_isprint.c \
+		ft_isascii.c ft_iscntrl.c ft_isdigit.c ft_islower.c ft_isprint.c \
 		ft_ispunct.c ft_isspace.c ft_isupper.c ft_itoa.c ft_memalloc.c \
 		ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c \
 		ft_memdel.c ft_memmove.c ft_memset.c ft_putchar_fd.c \
@@ -20,7 +20,7 @@ SRCS =	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c \
 		ft_lstmap.c
 
 OBJS = ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o \
-		ft_isascii.o ft_isdigit.o ft_islower.o ft_isprint.o \
+		ft_isascii.o ft_iscntrl.o ft_isdigit.o ft_islower.o ft_isprint.o \
 		ft_ispunct.o ft_isspace.o ft_isupper.o ft_itoa.o ft_memalloc.o \
 		ft_memccpy.o ft_memchr.o ft_memcmp.o ft_memcpy.o \
 		ft_memdel.o ft_memmove.o ft_memset.o ft_putchar_fd.o \
