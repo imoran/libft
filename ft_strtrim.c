@@ -26,13 +26,13 @@ char	*ft_strtrim(char const *s)
 	start = 0;
 	while (s[start] == ' ' || s[start] == '\n' || s[start] == '\t')
 		start++;
+	result = (char *)malloc(sizeof(char) * (end - start + 1));
 	while (s[end] == ' ' || s[end] == '\n' || s[end] == '\t')
 		end--;
-	result = (char *)malloc(sizeof(char) * ((end - start) + 1));
+	if (start > end)
+		return (ft_strdup(""));
 	if (!result)
 		return (NULL);
-	if (start > end)
-		return ("");
 	while (start <= end)
 		result[i++] = s[start++];
 	result[i] = '\0';
