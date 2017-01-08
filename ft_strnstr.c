@@ -25,6 +25,8 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		return (b);
 	nlen = ft_strlen(l);
 	result = 0;
+	if (nlen > len)
+		return (0);
 	while (nlen <= len && *b
 		&& (result = ft_strncmp(b, l, nlen)))
 	{
