@@ -37,7 +37,7 @@ OBJS = ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o \
 		ft_lstmap.o
 
 $(NAME):
-	gcc $(CFLAGS) -c $(SRCS) #-Ilibft.h
+	gcc $(CFLAGS) -c $(SRCS) -Ilibft.h
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
