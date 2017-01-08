@@ -14,7 +14,7 @@
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	nlen;
+	size_t	little_len;
 	int		result;
 	char	*b;
 	char	*l;
@@ -23,12 +23,12 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 	l = (char *)little;
 	if (!(*l))
 		return (b);
-	nlen = ft_strlen(l);
+	little_len = ft_strlen(l);
 	result = 0;
-	if (nlen > len)
+	if (little_len > len)
 		return (0);
-	while (nlen <= len && *b
-		&& (result = ft_strncmp(b, l, nlen)))
+	while (little_len <= len && *b
+		&& (result = ft_strncmp(b, l, little_len)))
 	{
 		len--;
 		b++;
