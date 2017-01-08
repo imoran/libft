@@ -11,43 +11,28 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-// #include <stdio.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {
-	size_t	i;
+	size_t	nlen;
+	int		result;
 	char	*b;
 	char	*l;
 
-	i = 0;
 	b = (char *)big;
 	l = (char *)little;
 	if (!(*l))
-	return (b);
-	while (len && *b)
+		return (b);
+	nlen = ft_strlen(l);
+	result = 0;
+	while (nlen <= len && *b
+		&& (result = ft_strncmp(b, l, nlen)))
 	{
-		if (*b == l[i])
-			i++;
-		else
-			i = 0;
-		if (l[i] == '\0')
-			return (b - i + 1);
-		b++;
 		len--;
+		b++;
 	}
-	return (NULL);
+	if (result)
+		return (0);
+	else
+		return (b);
 }
-
-
-
-
-
-
-
-// int		main()
-// {
-// 	char	buf2[] = "ozarabozaraboze123";
-// 	printf("%s\n", ft_strnstr(buf2, "ozaraboze", 15));
-// 	printf("%s\n", strnstr(buf2, "ozaraboze", 15));
-//
-// }

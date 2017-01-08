@@ -1,6 +1,6 @@
 NAME = libft.a
 
-CFLAGS = gcc -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS =	ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c \
 		ft_isascii.c ft_iscntrl.c ft_isdigit.c ft_islower.c ft_isprint.c \
@@ -37,16 +37,16 @@ OBJS = ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o \
 		ft_lstmap.o
 
 $(NAME):
-	$(CFLAGS) -c $(SRCS) -Ilibft.h
+	gcc $(CFLAGS) -c $(SRCS) #-Ilibft.h
 	ar rc $(NAME) $(OBJS)
 	ranlib $(NAME)
 
 all: $(NAME)
 
 clean:
-	rm -f $(OBJS)
+	rm -rf $(OBJS)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
