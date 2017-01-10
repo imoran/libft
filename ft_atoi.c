@@ -33,7 +33,7 @@ static void		ft_check(int *result, const char *str)
 			if (!(str[i + 1] > 47 && str[i + 1] < 58))
 				break ;
 		}
-		else if (!(str[i] > 0 && str[i] <= 32) && (!(neg) && !(pos)))
+		else if (!(ft_isspace(str[i])) && (!neg && !pos))
 			break ;
 		i++;
 	}
