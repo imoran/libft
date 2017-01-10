@@ -58,7 +58,7 @@ char		**ft_strsplit(char const *s, char c)
 	num_words = ft_substring((const char *)s, c);
 	str = (char **)malloc(sizeof(*str) * num_words + 1);
 	if (!str)
-		return (0);
+		return (NULL);
 	while (num_words--)
 	{
 		while (*s == c && *s)
