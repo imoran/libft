@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static void		ft_check(int *result, const char *str)
+static void		ft_check(size_t *result, const char *str)
 {
 	int i;
 	int neg;
@@ -23,14 +23,14 @@ static void		ft_check(int *result, const char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] == '-' && (str[i + 1] > 47 && str[i + 1] < 58))
+		if (str[i] == '-' && (ft_isdigit(str[i + 1])))
 			neg = 1;
-		if (str[i] == '+' && (str[i + 1] > 47 && str[i + 1] < 58))
+		if (str[i] == '+' && (ft_isdigit(str[i + 1])))
 			pos = 1;
-		if (str[i] > 47 && str[i] < 58)
+		if (ft_isdigit(str[i]))
 		{
 			*result = *result * 10 + (str[i] - '0');
-			if (!(str[i + 1] > 47 && str[i + 1] < 58))
+			if (!(ft_isdigit(str[i + 1])))
 				break ;
 		}
 		else if (!(ft_isspace(str[i])) && (!neg && !pos))
@@ -43,9 +43,9 @@ static void		ft_check(int *result, const char *str)
 
 int				ft_atoi(const char *str)
 {
-	int result;
+	size_t result;
 
 	result = 0;
 	ft_check(&result, str);
-	return (result);
+	return ((int)result);
 }
